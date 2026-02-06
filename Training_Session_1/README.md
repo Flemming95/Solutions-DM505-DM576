@@ -171,7 +171,6 @@ CREATE TABLE PC (
     ram     INT,
     hd      INT,
     price   DECIMAL(10,2),
-    FOREIGN KEY (model) REFERENCES Product(model)
 );
 ```
 
@@ -185,7 +184,6 @@ CREATE TABLE Laptop (
     hd      INT,
     screen  DECIMAL(3,1),
     price   DECIMAL(10,2),
-    FOREIGN KEY (model) REFERENCES Product(model)
 );
 ```
 
@@ -197,7 +195,6 @@ CREATE TABLE Printer (
     color   BOOLEAN,
     type    CHAR(10),
     price   DECIMAL(10,2),
-    FOREIGN KEY (model) REFERENCES Product(model)
 );
 ```
 
@@ -237,7 +234,6 @@ CREATE TABLE Ships (
     name      CHAR(30) PRIMARY KEY,
     class     CHAR(20),
     launched  INT,
-    FOREIGN KEY (class) REFERENCES Classes(class)
 );
 ```
 
@@ -251,6 +247,7 @@ CREATE TABLE Battles (
 ```
 
 #### d) Schema for relation Outcomes
+**I used a primary key consisting of ship+battle**
 
 ```sql
 CREATE TABLE Outcomes (
@@ -258,8 +255,6 @@ CREATE TABLE Outcomes (
     battle  CHAR(30),
     result  CHAR(10),
     PRIMARY KEY (ship, battle),
-    FOREIGN KEY (ship) REFERENCES Ships(name),
-    FOREIGN KEY (battle) REFERENCES Battles(name)
 );
 ```
 
