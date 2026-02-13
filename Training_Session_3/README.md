@@ -281,7 +281,7 @@ FROM Movies
 WHERE length > (
     SELECT length
     FROM Movies
-    WHERE title = 'Gone With The Wind'
+    WHERE title = 'Gone with the wind'
 );
 ```
 
