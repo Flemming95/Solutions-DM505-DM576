@@ -224,7 +224,7 @@ CREATE TABLE Movies (
     length      INT          CHECK (length >= 60 AND length <= 250),
     genre       VARCHAR(50),
     studioName  VARCHAR(100) CHECK (studioName IN ('Disney', 'Fox', 'MGM', 'Paramount')),
-    producerC#  INT,
+    producerC  INT,
     PRIMARY KEY (title, year)
 );
 ```
