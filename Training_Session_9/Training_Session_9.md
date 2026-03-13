@@ -152,30 +152,30 @@ For the PC database:
 - `PC`, `Laptop`, and `Printer` each describe a specific model, so `model` is also their primary key and simultaneously a foreign key back to `Product`.
 
 ```sql
-ALTER TABLE Product (
+ALTER TABLE Product 
     ADD PRIMARY KEY (model)
-);
+;
 
-ALTER TABLE PC (
+ALTER TABLE PC 
     ADD PRIMARY KEY (model),
     ADD CONSTRAINT fk_PC_product --fk: foreign key
         FOREIGN KEY (model)
         REFERENCES Product(model)
-);
+;
 
-ALTER TABLE Laptop (
+ALTER TABLE Laptop 
     ADD PRIMARY KEY (model),
     ADD CONSTRAINT fk_Laptop_Product
         FOREIGN KEY (model)
         REFERENCES Product(model)
-);
+;
 
-CREATE TABLE Printer (
+ALTER TABLE Printer 
     ADD PRIMARY KEY (model),
     ADD CONSTRAINT fk_PC_Product
         FOREIGN KEY (model)
         REFERENCES Product(model)
-);
+;
 ```
 
 ---
