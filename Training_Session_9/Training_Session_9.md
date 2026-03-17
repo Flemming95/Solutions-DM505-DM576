@@ -40,6 +40,14 @@ CREATE TABLE Movies (
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
 );
+
+-- ALTERNATIVELY USING ALTER TABLE
+ALTER TABLE movies
+ADD CONSTRAINT fk_movies_producer
+	FOREIGN KEY (producerC) REFERENCES movieexec(cert)
+		--default action
+		ON UPDATE NO ACTION 
+		ON DELETE NO ACTION;
 ```
 
 ---
@@ -64,6 +72,13 @@ CREATE TABLE Movies (
         ON DELETE SET NULL
         ON UPDATE SET NULL
 );
+
+-- ALTERNATIVELY USING ALTER TABLE
+ALTER TABLE movies
+ADD CONSTRAINT fk_movies_producer
+	FOREIGN KEY (producerC) REFERENCES movieexec(cert)
+		ON UPDATE SET NULL 
+		ON DELETE SET NULL;
 ```
 
 ---
@@ -88,6 +103,13 @@ CREATE TABLE Movies (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
+-- ALTERNATIVELY USING ALTER TABLE
+ALTER TABLE movies
+ADD CONSTRAINT fk_movies_producer
+	FOREIGN KEY (producerC) REFERENCES movieexec(cert)
+		ON UPDATE CASCADE 
+		ON DELETE CASCADE;
 ```
 
 ---
